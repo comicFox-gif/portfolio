@@ -15,15 +15,18 @@
   padding: 0;
 }
 
+html, body { height: 100%; }
+
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
+a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
 ul { list-style: none; }
 
 .web3-container {
@@ -80,7 +83,7 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 
-title {
+.title {
   font-size: 5rem;
   line-height: 1;
   margin-bottom: 1.5rem;
@@ -169,7 +172,7 @@ button {
   transform: translateY(-2px);
 }
 
-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
 .card {
   background: var(--card-bg);
@@ -195,7 +198,7 @@ grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)
 /* Responsive tweaks - mobile-first improvements */
 /* Adjust container padding on smaller screens for better spacing */
 @media (max-width: 900px) {
-  .web3-container { padding: 0 16px; }
+  .web3-container { padding: 0 16px; max-width: 1000px; }
 
   /* Navbar: allow wrapping, reduce gaps and padding */
   .navbar { flex-wrap: wrap; gap: 1rem; padding: 1.25rem 0; justify-content: space-between; }
@@ -253,7 +256,7 @@ grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)
 
   /* Reduce hover-focused effects for touch devices */
   .card:hover { transform: none; }
-  .skill-tags span:hover, .contact-link:hover, .primary-btn:hover, .secondary-btn:hover { box-shadow: none; }
+  .skill-tags span:hover, .contact-link:hover, .primary-btn:hover, .secondary-btn:hover { box-shadow: none; transform: none; }
 
   /* Footer: stack elements and ensure spacing */
   .footer { align-items: stretch; }
@@ -264,3 +267,5 @@ grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)
 @media (hover: none) and (pointer: coarse) {
   .nav-links a, .contact-link, .connect-btn, .skill-tags span { -webkit-tap-highlight-color: rgba(0,0,0,0.05); }
 }
+
+/* End of file */
